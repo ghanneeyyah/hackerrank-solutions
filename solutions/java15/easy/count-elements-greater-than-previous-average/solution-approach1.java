@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-24, 11:57 p.m.
+// Technique   running-average-stream-tracking
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm maintains a list of all previous elements to calculate the running average at each step, incrementing the count whenever the current element exceeds that average.
+// Interview   Before: "I would use a running sum to calculate the average in O(1) time." After: "The current implementation uses a stream-based average calculation inside a loop, resulting in O(n^2) time complexity, which is acceptable given the constraint of n <= 1000."
+// Pitfalls    (1) Using stream-based average calculation inside a loop leads to O(n^2) time complexity, which may be inefficient for larger datasets.  (2) The logic skips the first element's comparison by checking if the previousDays list is empty before adding the current element.  (3) The implementation stores all previous elements in a list, resulting in O(n) space complexity.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
