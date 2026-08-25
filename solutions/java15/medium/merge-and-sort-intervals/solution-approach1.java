@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-25, 01:54 p.m.
+// Technique   sorting-and-linear-scan
+// Time        O(N log N)
+// Space       O(N)
+// Insight     The algorithm maintains a reference to the last merged interval and updates its end time if the current interval overlaps, or appends a new interval if it does not.
+// Interview   Before: "How would you merge overlapping intervals?" After: "I sort the intervals by start time and perform a single linear pass to merge overlaps, resulting in O(N log N) time complexity due to sorting, which handles the N up to 100,000 constraint efficiently."
+// Pitfalls    (1) The loop starts at index 0, causing the first interval to be compared against itself, which is redundant but harmless due to the logic.  (2) Sorting by start time is mandatory; failing to sort would break the overlap condition logic.  (3) Using Integer subtraction in the comparator can cause overflow if start times are very large, though not applicable given the 10^9 constraint.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
