@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-25, 01:58 p.m.
+// Technique   sorting-and-linear-scan
+// Time        O(N log N)
+// Space       O(N)
+// Insight     The algorithm maintains a reference to the last merged interval and updates its end time if the current interval overlaps, or appends the current interval if it starts after the last one ends.
+// Interview   Before: "I would use a nested loop to compare every interval against every other interval." After: "Sorting by start time allows a single linear pass to merge intervals in O(N log N) time, which is optimal given the 100,000 interval constraint."
+// Pitfalls    (1) Failing to handle the empty list case, which causes an IndexOutOfBoundsException when accessing the first element.  (2) Using integer subtraction in the comparator, which can cause overflow if start times are large negative and positive values.  (3) Modifying the original list elements directly, which may lead to unexpected side effects if the input list is reused elsewhere.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
