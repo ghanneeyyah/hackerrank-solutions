@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-25, 12:27 p.m.
+// Technique   running-sum-comparison
+// Time        O(n)
+// Space       O(n)
+// Insight     The algorithm maintains a running sum of previous elements to compare the current element against the average using multiplication to avoid floating-point precision issues.
+// Interview   Before: "I would calculate the average at each step by dividing the sum by the count." After: "I optimized this to O(n) time by comparing the current element with the running sum multiplied by the index, which avoids division and floating-point errors for large inputs."
+// Pitfalls    (1) Using integer division for the average calculation would cause truncation errors, leading to incorrect comparisons.  (2) Failing to use a long for the running sum or the multiplication product can result in integer overflow given the constraint of 10^9 per element.  (3) The code correctly handles the n < 2 case by returning 0, as the problem requires skipping the first element and comparing subsequent ones.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
