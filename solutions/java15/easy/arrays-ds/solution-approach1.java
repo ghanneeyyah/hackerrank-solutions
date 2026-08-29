@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-29, 11:39 p.m.
+// Technique   reverse-iteration-list-copy
+// Time        O(n)
+// Space       O(n)
+// Insight     The implementation constructs a new list by traversing the input list from the last index down to zero.
+// Interview   Before: "I could swap elements in-place to save space." After: "This approach uses O(n) space to create a new list, which is acceptable given the constraints, and runs in O(n) time by iterating backwards through the input list."
+// Pitfalls    (1) Accessing index a.size() instead of a.size() - 1 causes an IndexOutOfBoundsException.  (2) Failing to include the zero index in the loop condition i >= 0 results in an incomplete reversal.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
