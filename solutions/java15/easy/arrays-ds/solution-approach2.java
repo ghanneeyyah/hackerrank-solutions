@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-29, 11:52 p.m.
+// Technique   two-pointers-in-place-swap
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm maintains two pointers at the start and end of the list, swapping elements and moving toward the center until they meet or cross.
+// Interview   Before: "I would create a new list and copy elements in reverse order." After: "I can perform an in-place reversal using two pointers to swap elements, achieving O(n) time and O(1) auxiliary space, which is optimal for an array of size N."
+// Pitfalls    (1) Using an incorrect loop condition like left <= right would cause an unnecessary swap of the middle element when the list size is odd.  (2) Failing to use a temporary variable during the swap operation results in data loss for the element at the left index.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
