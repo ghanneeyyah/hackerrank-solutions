@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-30, 11:41 a.m.
+// Technique   two-pointers-summation
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm calculates the total sum by pairing elements from both ends of the list and moving inward until the pointers meet or cross.
+// Interview   Before: "I would iterate through the list and add each element to a running total." After: "I used a two-pointer approach to sum elements from both ends, which maintains O(n) time complexity and O(1) space, correctly handling the middle element when the array size is odd."
+// Pitfalls    (1) The logic adds the middle element twice if the array size is odd because the loop condition left <= right includes the middle index.  (2) Integer overflow may occur if the sum of array elements exceeds the capacity of a 32-bit signed integer.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
