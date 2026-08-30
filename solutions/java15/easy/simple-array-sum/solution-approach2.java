@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-08-30, 11:44 a.m.
+// Technique   enhanced-for-loop-summation
+// Time        O(n)
+// Space       O(n)
+// Insight     The implementation iterates through the provided list once, accumulating each integer element into a running sum variable.
+// Interview   Before: "How would you calculate the total of an array?" After: "I would iterate through the list and accumulate the values into a sum variable, resulting in O(n) time complexity, which is optimal for processing all n elements."
+// Pitfalls    (1) Integer overflow may occur if the sum of the array elements exceeds the maximum value of a 32-bit signed integer.  (2) The input parsing logic assumes the array elements are space-separated and correctly formatted as integers.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
