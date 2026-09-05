@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-09-05, 06:17 p.m.
+// Technique   single-pass-diagonal-summation
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm iterates through the matrix rows once, accumulating the primary diagonal element at index i and the secondary diagonal element at index n-1-i simultaneously.
+// Interview   Before: "I would iterate through the matrix twice to sum each diagonal separately." After: "I can compute both sums in a single O(n) pass by using the row index i to access arr[i][i] and arr[i][n-1-i], which is more efficient for a square matrix of size n."
+// Pitfalls    (1) Confusing the secondary diagonal index calculation, which must be n-1-i to correctly access elements from the top-right to the bottom-left.  (2) Failing to use Math.abs() on the final difference, as the problem explicitly requires the absolute difference between the two sums.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
