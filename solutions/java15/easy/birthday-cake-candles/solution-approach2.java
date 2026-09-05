@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-09-05, 07:31 p.m.
+// Technique   sorting-and-linear-scan
+// Time        O(n log n)
+// Space       O(1)
+// Insight     The algorithm identifies the maximum candle height by sorting the list and then counts occurrences of that maximum value through a single linear pass.
+// Interview   Before: "I could use a hash map to store frequencies of each height." After: "Sorting the list allows finding the maximum in O(n log n) time, followed by a linear scan to count occurrences, which is efficient given the constraints on n."
+// Pitfalls    (1) Sorting the list modifies the original input order, which might be undesirable if the list is needed later.  (2) Using Collections.max() after sorting is redundant as the last element of the sorted list is already the maximum.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
