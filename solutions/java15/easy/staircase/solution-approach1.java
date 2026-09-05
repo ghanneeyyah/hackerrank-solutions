@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-09-05, 06:59 p.m.
+// Technique   string-repeat-loop
+// Time        O(n^2)
+// Space       O(n)
+// Insight     The algorithm iterates from one to n, printing a line composed of n minus i spaces followed by i hash symbols to ensure right-alignment.
+// Interview   Before: "How would you construct the right-aligned staircase?" After: "I use a loop from 1 to n, repeating spaces and hashes to build each line. This runs in O(n^2) time because each of the n lines requires O(n) operations to construct and print."
+// Pitfalls    (1) Incorrectly calculating the number of spaces as n minus i plus one instead of n minus i.  (2) Using a loop range starting at zero instead of one, which would result in an extra line of spaces.  (3) Failing to account for the right-alignment requirement by printing hashes before spaces.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
