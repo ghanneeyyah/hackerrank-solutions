@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-09-05, 06:37 p.m.
+// Technique   linear-scan-counter
+// Time        O(n)
+// Space       O(1)
+// Insight     The algorithm maintains three independent counters to track the frequency of positive, negative, and zero elements during a single pass over the input list.
+// Interview   Before: "I will use a hash map to store counts." After: "Using three integer counters is more efficient, achieving O(n) time and O(1) space, while ensuring the required six-decimal precision via printf formatting."
+// Pitfalls    (1) Integer division will truncate results to zero if the numerator is not cast to double before dividing by the array size.  (2) Failing to use the %.6f format specifier will result in incorrect precision, as the problem explicitly requires six decimal places.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
