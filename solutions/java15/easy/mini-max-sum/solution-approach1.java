@@ -7,6 +7,11 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-09-05, 07:14 p.m.
+// Technique   sorting-and-sliding-window-sum
+// Time        O(N log N)
+// Space       O(1)
+// Insight     The minimum sum is the total of the first four elements, while the maximum sum is the total of the last four elements after sorting the array.
+// Pitfalls    (1) Failing to use long integers for the sum variables, which causes overflow given the constraints.  (2) Assuming the input array is already sorted, which leads to incorrect minimum and maximum calculations.  (3) Incorrectly indexing the array during the loop, which results in an ArrayIndexOutOfBoundsException.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
