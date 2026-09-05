@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-09-05, 07:28 p.m.
+// Technique   sorting-and-linear-scan
+// Time        O(N log N)
+// Space       O(1)
+// Insight     The algorithm sorts the list to identify the maximum value at the last index and then performs a linear scan to count all occurrences of that maximum value.
+// Interview   Before: "I could use a hash map to store frequencies of each candle height." After: "Sorting the list allows me to identify the maximum height in O(N log N) time, then counting occurrences takes O(N), resulting in an overall O(N log N) time complexity for the problem constraints."
+// Pitfalls    (1) Sorting the list modifies the original input order, which might be unexpected if the list is reused elsewhere.  (2) Using O(N log N) time complexity is less efficient than a single-pass O(N) approach using a running maximum and counter.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
